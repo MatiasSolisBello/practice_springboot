@@ -1,16 +1,9 @@
-package com.practice_springboot.models.entity;
+package com.practice_springboot.models;
 
 import java.io.Serializable;
 import java.util.Date;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-import jakarta.persistence.Temporal;
-import jakarta.persistence.TemporalType;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name="customers")
@@ -27,6 +20,11 @@ public class Customer implements Serializable{
 	@Column(name = "create_at")
 	@Temporal(TemporalType.DATE)
 	private Date createdAt;
+	
+	@PrePersist
+	public void prePersist() {
+		createdAt = new Date();
+	}
 
 	public Long getId() {
 		return id;

@@ -1,8 +1,9 @@
 package com.practice_springboot.dao;
 
-import org.springframework.data.repository.CrudRepository;
-import com.practice_springboot.models.entity.Customer;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface ICustomerDao extends CrudRepository<Customer, Long>{
+import com.practice_springboot.models.Customer;
+
+public interface ICustomerDao extends JpaRepository<Customer, Long>{
 
 }
