@@ -10,7 +10,7 @@ import com.practice_springboot.models.Customer;
 public interface CustomerService {
 	public List<Customer> findAll();
 	public Page<Customer> findAll(Pageable pageable);
-	public void save(Customer customer);
+	public Customer save(Customer customer);
 	public Customer findById(Long id);
-	public void delete(Customer cliente);
+	public void delete(Long id);
 }
