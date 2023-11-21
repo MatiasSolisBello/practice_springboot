@@ -31,8 +31,8 @@ public class CustomerServiceImpl implements CustomerService {
 	
 	@Override
 	@Transactional
-	public void save(Customer customer) {
-		dao.save(customer);
+	public Customer save(Customer customer) {
+		return dao.save(customer);
 	}
 
 	
@@ -42,11 +42,11 @@ public class CustomerServiceImpl implements CustomerService {
 		return dao.findById(id).orElse(null);
 	}
 
-	
+
 	@Override
 	@Transactional
-	public void delete(Customer cliente) {
-		dao.delete(cliente);
+	public void delete(Long id) {
+		dao.deleteById(id);
 	}
 	
 }

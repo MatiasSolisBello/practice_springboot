@@ -21,6 +21,9 @@ public class Customer implements Serializable{
 	@Temporal(TemporalType.DATE)
 	private Date createdAt;
 	
+	private String photo;
+	
+
 	@PrePersist
 	public void prePersist() {
 		createdAt = new Date();
@@ -64,6 +67,14 @@ public class Customer implements Serializable{
 
 	public void setCreatedAt(Date createdAt) {
 		this.createdAt = createdAt;
+	}
+	
+	public String getPhoto() {
+		return photo;
+	}
+
+	public void setPhoto(String photo) {
+		this.photo = photo;
 	}
 	
 	private static final long serialVersionUID = 1L;
